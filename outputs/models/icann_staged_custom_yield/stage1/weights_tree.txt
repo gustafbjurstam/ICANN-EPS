@@ -1,0 +1,303 @@
+ICANN MODEL WEIGHTS HIERARCHY
+============================
+
+Model Type: Functional
+Cell Type: piCANN
+Network sizes (n): [1, 1, 1, 1, 1]
+
+MAIN LAYERS:
+  C11:
+    (No trainable weights)
+  C22:
+    (No trainable weights)
+  C33:
+    (No trainable weights)
+  dt:
+    (No trainable weights)
+  concatenate:
+    (No trainable weights)
+  rnn_call:
+    uniform_yield_weight: (1,) (has constraints)
+      min=3.50000, max=3.50000, mean=3.50000, std=0.00000
+      Values:
+        [3.5]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.13856, max=0.18280, mean=0.16068, std=0.02212
+      Values:
+        [0.182804 0.138557]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+      Values:
+        [0.097581 0.194695]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+      Values:
+        [0.097579 0.194695]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.11897, max=0.25606, mean=0.18751, std=0.06854
+      Values:
+        [0.256058 0.11897 ]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+      Values:
+        [0.013307 0.352048]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+      Values:
+        [0.013307 0.352048]
+
+    coefficients: (1,) (constrained: NonNeg)
+      min=0.60301, max=0.60301, mean=0.60301, std=0.00000
+      Values:
+        [0.603007]
+
+    biases: (1,)
+      min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+      Values:
+        [0.]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    coefficients: (1,) (constrained: NonNeg)
+      min=0.00012, max=0.00012, mean=0.00012, std=0.00000
+      Values:
+        [0.000121]
+
+    biases: (1,)
+      min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+      Values:
+        [0.]
+
+  S11:
+    (No trainable weights)
+  S22:
+    (No trainable weights)
+  S33:
+    (No trainable weights)
+
+ICANN CELL COMPONENTS:
+  hNet_e:
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.13856, max=0.18280, mean=0.16068, std=0.02212
+      Values:
+        [0.182804 0.138557]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+      Values:
+        [0.097581 0.194695]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+      Values:
+        [0.097579 0.194695]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.11897, max=0.25606, mean=0.18751, std=0.06854
+      Values:
+        [0.256058 0.11897 ]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+      Values:
+        [0.013307 0.352048]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+      Values:
+        [0.013307 0.352048]
+
+    coefficients: (1,) (constrained: NonNeg)
+      min=0.60301, max=0.60301, mean=0.60301, std=0.00000
+      Values:
+        [0.603007]
+
+    biases: (1,)
+      min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+      Values:
+        [0.]
+
+    hNet_e.iso_net1:
+      cp1: (2,) (has regularization) (constrained: NonNeg)
+        min=0.13856, max=0.18280, mean=0.16068, std=0.02212
+        Values:
+          [0.182804 0.138557]
+
+      cp2: (2,) (has regularization) (constrained: NonNeg)
+        min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+        Values:
+          [0.097581 0.194695]
+
+      cp3: (2,) (has regularization) (constrained: NonNeg)
+        min=0.09758, max=0.19469, mean=0.14614, std=0.04856
+        Values:
+          [0.097579 0.194695]
+
+    hNet_e.iso_net2:
+      cp1: (2,) (has regularization) (constrained: NonNeg)
+        min=0.11897, max=0.25606, mean=0.18751, std=0.06854
+        Values:
+          [0.256058 0.11897 ]
+
+      cp2: (2,) (has regularization) (constrained: NonNeg)
+        min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+        Values:
+          [0.013307 0.352048]
+
+      cp3: (2,) (has regularization) (constrained: NonNeg)
+        min=0.01331, max=0.35205, mean=0.18268, std=0.16937
+        Values:
+          [0.013307 0.352048]
+
+    hNet_e.vol_net:
+      coefficients: (1,) (constrained: NonNeg)
+        min=0.60301, max=0.60301, mean=0.60301, std=0.00000
+        Values:
+          [0.603007]
+
+      biases: (1,)
+        min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+        Values:
+          [0.]
+
+      hNet_e.vol_net.power_expansion:
+        coefficients: (1,) (constrained: NonNeg)
+          min=0.60301, max=0.60301, mean=0.60301, std=0.00000
+          Values:
+            [0.603007]
+
+        biases: (1,)
+          min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+          Values:
+            [0.]
+
+  hNet_i:
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp1: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp2: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    cp3: (2,) (has regularization) (constrained: NonNeg)
+      min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+      Values:
+        [1.e-04 1.e-04]
+
+    coefficients: (1,) (constrained: NonNeg)
+      min=0.00012, max=0.00012, mean=0.00012, std=0.00000
+      Values:
+        [0.000121]
+
+    biases: (1,)
+      min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+      Values:
+        [0.]
+
+    hNet_i.iso_net1:
+      cp1: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+      cp2: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+      cp3: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+    hNet_i.iso_net2:
+      cp1: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+      cp2: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+      cp3: (2,) (has regularization) (constrained: NonNeg)
+        min=0.00010, max=0.00010, mean=0.00010, std=0.00000
+        Values:
+          [1.e-04 1.e-04]
+
+    hNet_i.vol_net:
+      coefficients: (1,) (constrained: NonNeg)
+        min=0.00012, max=0.00012, mean=0.00012, std=0.00000
+        Values:
+          [0.000121]
+
+      biases: (1,)
+        min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+        Values:
+          [0.]
+
+      hNet_i.vol_net.power_expansion:
+        coefficients: (1,) (constrained: NonNeg)
+          min=0.00012, max=0.00012, mean=0.00012, std=0.00000
+          Values:
+            [0.000121]
+
+        biases: (1,)
+          min=0.00000, max=0.00000, mean=0.00000, std=0.00000
+          Values:
+            [0.]
+
+  uniform_yield_weight: (1,) = [3.5]
