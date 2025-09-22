@@ -51,140 +51,7 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
     seed = 1234
     
     # Define stage configuration
-    # stage_configs = [
-    #     {
-    #         "name": "Initial elastic stage with hNet_e",
-    #         "epochs": 1000,
-    #         "lr": 5e-3,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 8,
-    #         "data_series": -1,  # Use all data
-    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_e'],
-    #         "patience": 40,
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": True,
-    #         "copy_scale_factor": 0.0002
-    #     },
-    #     {
-    #         "name": "Initial elastic stage with hNet_e",
-    #         "epochs": 3000,
-    #         "lr": 5e-3,
-    #         "loss_weights": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 8,
-    #         "data_series": -1,  # Use all data
-    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_e'],
-    #         "patience": 40,
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": True,
-    #         "copy_scale_factor": 0.0001
-    #     },
-    #     {
-    #         "name": "Yield weight calibration",
-    #         "epochs": 1000,
-    #         "lr": 1e-2,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 20,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['uniform_yield_weight'],
-    #         "patience": 20,
-    #         "reduce_lr_patience": 8,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "gNets training",
-    #         "epochs": 1000,
-    #         "lr": 1e-4,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 30,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": ['hNet_e', 'hNet_i'],
-    #         "unfrozen_nets": ['gNet1', 'gNet2', 'gNet3'],
-    #         "patience": 40, 
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "hNet_i and hNet_e training",
-    #         "epochs": 2000,
-    #         "lr": 2e-3,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 94,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": ['gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_i', 'hNet_e'],
-    #         "patience": 60,
-    #         "reduce_lr_patience": 20,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "hNet_i and hNet_e training",
-    #         "epochs": 500,
-    #         "lr": 1e-2,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 94,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": ['gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_i', 'hNet_e'],
-    #         "patience": 60,
-    #         "reduce_lr_patience": 20,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "Initial elastic stage with hNet_e",
-    #         "epochs": 1000,
-    #         "lr": 5e-3,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 8,
-    #         "data_series": -1,  # Use all data
-    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_e'],
-    #         "patience": 40,
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "Initial elastic stage with hNet_e",
-    #         "epochs": 1000,
-    #         "lr": 5e-3,
-    #         "loss_weights": [1.0, 0.5, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 8,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_e'],
-    #         "patience": 40,
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "Initial elastic stage with hNet_e",
-    #         "epochs": 700,
-    #         "lr": 5e-3,
-    #         "loss_weights": [1.0, 0.5, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 8,
-    #         "data_series": -1,  # All data
-    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "unfrozen_nets": ['hNet_e'],
-    #         "patience": 40,
-    #         "reduce_lr_patience": 15,
-    #         "copy_weights": False
-    #     },
-    #     {
-    #         "name": "Full training",
-    #         "epochs": 1000,
-    #         "lr": 1e-4,
-    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    #         "data_percentage": 94,
-    #         "data_series": 0,  # Uniaxial data
-    #         "frozen_nets": [],
-    #         "unfrozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-    #         "patience": 80,
-    #         "reduce_lr_patience": 25,
-    #         "copy_weights": False
-    #     }
-    # ]
+    # This config for normal yield surface
     stage_configs = [
         {
             "name": "Initial elastic stage with hNet_e",
@@ -193,7 +60,7 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
             "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
             "data_percentage": 8,
             "data_series": -1,  # Use all data
-            "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3','uniform_yield_weight'],
+            "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
             "unfrozen_nets": ['hNet_e'],
             "patience": 40,
             "reduce_lr_patience": 15,
@@ -203,11 +70,11 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
         {
             "name": "Initial elastic stage with hNet_e",
             "epochs": 3000,
-            "lr": 1e-2,
+            "lr": 5e-3,
             "loss_weights": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
             "data_percentage": 8,
             "data_series": -1,  # Use all data
-            "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3','uniform_yield_weight'],
+            "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
             "unfrozen_nets": ['hNet_e'],
             "patience": 40,
             "reduce_lr_patience": 15,
@@ -228,9 +95,22 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
             "copy_weights": False
         },
         {
+            "name": "gNets training",
+            "epochs": 1000,
+            "lr": 1e-4,
+            "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "data_percentage": 30,
+            "data_series": 0,  # Uniaxial data
+            "frozen_nets": ['hNet_e', 'hNet_i'],
+            "unfrozen_nets": ['gNet1', 'gNet2', 'gNet3'],
+            "patience": 40, 
+            "reduce_lr_patience": 15,
+            "copy_weights": False
+        },
+        {
             "name": "hNet_i and hNet_e training",
-            "epochs": 400,
-            "lr": 1e-2,
+            "epochs": 2000,
+            "lr": 2e-3,
             "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
             "data_percentage": 94,
             "data_series": 0,  # Uniaxial data
@@ -296,21 +176,8 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
             "name": "Full training",
             "epochs": 1000,
             "lr": 1e-4,
-            "loss_weights": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0],
+            "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
             "data_percentage": 94,
-            "data_series": 0,  # Uniaxial data
-            "frozen_nets": [],
-            "unfrozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
-            "patience": 80,
-            "reduce_lr_patience": 25,
-            "copy_weights": False
-        },
-        {
-            "name": "Full training",
-            "epochs": 500,
-            "lr": 1e-3,
-            "loss_weights": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0],
-            "data_percentage": 100,
             "data_series": 0,  # Uniaxial data
             "frozen_nets": [],
             "unfrozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
@@ -319,6 +186,141 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
             "copy_weights": False
         }
     ]
+    # This config for cubic yield surface
+    # stage_configs = [
+    #     {
+    #         "name": "Initial elastic stage with hNet_e",
+    #         "epochs": 1000,
+    #         "lr": 5e-3,
+    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 8,
+    #         "data_series": -1,  # Use all data
+    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3','uniform_yield_weight'],
+    #         "unfrozen_nets": ['hNet_e'],
+    #         "patience": 40,
+    #         "reduce_lr_patience": 15,
+    #         "copy_weights": True,
+    #         "copy_scale_factor": 0.0002
+    #     },
+    #     {
+    #         "name": "Initial elastic stage with hNet_e",
+    #         "epochs": 3000,
+    #         "lr": 1e-2,
+    #         "loss_weights": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 8,
+    #         "data_series": -1,  # Use all data
+    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3','uniform_yield_weight'],
+    #         "unfrozen_nets": ['hNet_e'],
+    #         "patience": 40,
+    #         "reduce_lr_patience": 15,
+    #         "copy_weights": True,
+    #         "copy_scale_factor": 0.0001
+    #     },
+    #     {
+    #         "name": "Yield weight calibration",
+    #         "epochs": 1000,
+    #         "lr": 1e-2,
+    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 20,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['uniform_yield_weight'],
+    #         "patience": 20,
+    #         "reduce_lr_patience": 8,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "hNet_i and hNet_e training",
+    #         "epochs": 400,
+    #         "lr": 1e-2,
+    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 94,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": ['gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['hNet_i', 'hNet_e'],
+    #         "patience": 60,
+    #         "reduce_lr_patience": 20,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "hNet_i and hNet_e training",
+    #         "epochs": 500,
+    #         "lr": 1e-2,
+    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 94,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": ['gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['hNet_i', 'hNet_e'],
+    #         "patience": 60,
+    #         "reduce_lr_patience": 20,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "Initial elastic stage with hNet_e",
+    #         "epochs": 1000,
+    #         "lr": 5e-3,
+    #         "loss_weights": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 8,
+    #         "data_series": -1,  # Use all data
+    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['hNet_e'],
+    #         "patience": 40,
+    #         "reduce_lr_patience": 15,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "Initial elastic stage with hNet_e",
+    #         "epochs": 1000,
+    #         "lr": 5e-3,
+    #         "loss_weights": [1.0, 0.5, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 8,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['hNet_e'],
+    #         "patience": 40,
+    #         "reduce_lr_patience": 15,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "Initial elastic stage with hNet_e",
+    #         "epochs": 700,
+    #         "lr": 5e-3,
+    #         "loss_weights": [1.0, 0.5, 0.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 8,
+    #         "data_series": -1,  # All data
+    #         "frozen_nets": ['hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "unfrozen_nets": ['hNet_e'],
+    #         "patience": 40,
+    #         "reduce_lr_patience": 15,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "Full training",
+    #         "epochs": 1000,
+    #         "lr": 1e-4,
+    #         "loss_weights": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 94,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": [],
+    #         "unfrozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "patience": 80,
+    #         "reduce_lr_patience": 25,
+    #         "copy_weights": False
+    #     },
+    #     {
+    #         "name": "Full training",
+    #         "epochs": 500,
+    #         "lr": 1e-3,
+    #         "loss_weights": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0],
+    #         "data_percentage": 100,
+    #         "data_series": 0,  # Uniaxial data
+    #         "frozen_nets": [],
+    #         "unfrozen_nets": ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3'],
+    #         "patience": 80,
+    #         "reduce_lr_patience": 25,
+    #         "copy_weights": False
+    #     }
+    # ]
     
     all_nets = ['hNet_e', 'hNet_i', 'gNet1', 'gNet2', 'gNet3']
     
@@ -345,9 +347,9 @@ def train_staged_icann_refactored(resume_from_stage=None, save_path="outputs/mod
     
     # Option 2: Load from MATLAB files (uncomment if needed)
     # matlab_files = [
-    #     "data/matlab_data/perfect_uniaxial_C_PK2.mat",
-    #     "data/matlab_data/perfect_biaxial_C_PK2.mat",
-    #     "data/matlab_data/perfect_pure_shear_C_PK2.mat"
+    #     "data/matlab_data/new_uniaxial_C_PK2.mat",
+    #     "data/matlab_data/new_biaxial_C_PK2.mat",
+    #     "data/matlab_data/new_pure_shear_C_PK2.mat"
     # ]
     # train_inputs, train_outputs, x_train, y_train = load_matlab_data(
     #     matlab_files, dt_value=1.0, normalize=True
