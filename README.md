@@ -1,5 +1,7 @@
 # iCANN-EPS: Data-driven constitutive modelling of EPS foams
 
+[![DOI](https://zenodo.org/badge/1049388588.svg)](https://doi.org/10.5281/zenodo.17179359)
+
 This repository contains the code and data associated with the MSc thesis  
 **“Data-driven Constitutive Modelling of Expanded Polystyrene Foams”** (KTH Royal Institute of Technology, 2025).
 
@@ -21,7 +23,7 @@ Key features:
 - Training with staged optimisation and regularisation for stability and sparsity  
 
 A snapshot of this repository is archived on Zenodo for long-term preservation and citation:  
-[DOI on Zenodo][zenodo-link]  
+[10.5281/zenodo.17179360][https://doi.org/10.5281/zenodo.17179359]  
 
 ---
 
