@@ -1,4 +1,4 @@
-# EPS-ICANN: Data-driven constitutive modelling of EPS foams
+# iCANN-EPS: Data-driven constitutive modelling of EPS foams
 
 This repository contains the code and data associated with the MSc thesis  
 **“Data-driven Constitutive Modelling of Expanded Polystyrene Foams”** (KTH Royal Institute of Technology, 2025).
