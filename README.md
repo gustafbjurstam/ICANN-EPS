@@ -9,7 +9,7 @@ This repository contains the code and data associated with the MSc thesis
 
 ## Thesis
 The full thesis is published and available through the KTH DiVA portal:  
-[Thesis PDF on DiVA][diva-link]
+[Thesis PDF on DiVA](https://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-370421)
 
 ---
 
@@ -23,7 +23,7 @@ Key features:
 - Training with staged optimisation and regularisation for stability and sparsity  
 
 A snapshot of this repository is archived on Zenodo for long-term preservation and citation:  
-[10.5281/zenodo.17179360][https://doi.org/10.5281/zenodo.17179359]  
+[10.5281/zenodo.17179360](https://doi.org/10.5281/zenodo.17179359)
 
 ---
 
